@@ -55,4 +55,10 @@ public class BinaryTree<T extends Comparable> implements IBinaryTree<T> {
 		return null;
 	}
 
+	@Override
+	public String toString(Node<T> rootNode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

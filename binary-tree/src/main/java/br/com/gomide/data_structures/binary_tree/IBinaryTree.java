@@ -76,5 +76,14 @@ public interface IBinaryTree<T extends Comparable> {
 	 * @return node levelÏ
 	 */
 	Integer calculateNodeLevel(Node<T> node);
+	
+	/**
+	 * Should use the String representation of a tree. This is an example for a
+	 * Node<Integer> tree: 6(2(1 4(3)) 8)
+	 * 
+	 * @param node
+	 * @return String representation of a tree.
+	 */
+	String toString(Node<T> rootNode);
 
 }
