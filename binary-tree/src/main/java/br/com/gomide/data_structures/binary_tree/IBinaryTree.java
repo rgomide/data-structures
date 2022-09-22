@@ -1,6 +1,14 @@
 package br.com.gomide.data_structures.binary_tree;
 
-public interface IBinaryTree<T extends Comparable> {
+public interface IBinaryTree<T extends Comparable<?>> {
+
+	/**
+	 * Create a tree from a single element
+	 * 
+	 * @param element root element
+	 * @return root node
+	 */
+	Node<T> createTree(T element);
 
 	/**
 	 * This method creates a new tree returning the root Node. The elements should
@@ -25,7 +33,7 @@ public interface IBinaryTree<T extends Comparable> {
 	 * @param rootNode
 	 * @param element
 	 */
-	void insert(Node rootNode, T element);
+	void insert(Node<T> rootNode, T element);
 
 	/**
 	 * Given a root node, removes an element
@@ -34,7 +42,7 @@ public interface IBinaryTree<T extends Comparable> {
 	 * @param element
 	 * @return
 	 */
-	boolean remove(Node rootNode, T element);
+	boolean remove(Node<T> rootNode, T element);
 
 	/**
 	 * Get the father node
@@ -72,11 +80,12 @@ public interface IBinaryTree<T extends Comparable> {
 	/**
 	 * Calculate the Node level
 	 * 
+	 * @param rootNode
 	 * @param node
-	 * @return node levelÏ
+	 * @return node level
 	 */
-	Integer calculateNodeLevel(Node<T> node);
-	
+	Integer calculateNodeLevel(Node<T> rootNode, Node<T> node);
+
 	/**
 	 * Should use the String representation of a tree. This is an example for a
 	 * Node<Integer> tree: 6(2(1 4(3)) 8)

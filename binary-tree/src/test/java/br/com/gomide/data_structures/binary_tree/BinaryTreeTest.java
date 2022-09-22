@@ -13,7 +13,30 @@ class BinaryTreeTest {
 
 		Node<Integer> rootNode = binaryTreeOps.createTree(elements);
 
-		assertEquals(binaryTreeOps.toString(rootNode), "6(2(1 4(3)) 8)");
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )");
+	}
+
+	@Test
+	void performASetOfInsertions() {
+		IBinaryTree<Integer> binaryTreeOps = new BinaryTree<>();
+		Node<Integer> rootNode = binaryTreeOps.createTree(6);
+
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 ");
+
+		binaryTreeOps.insert(rootNode, 2);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 )");
+
+		binaryTreeOps.insert(rootNode, 8);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 right:8 )");
+
+		binaryTreeOps.insert(rootNode, 1);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 )right:8 )");
+
+		binaryTreeOps.insert(rootNode, 4);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 right:4 )right:8 )");
+
+		binaryTreeOps.insert(rootNode, 3);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )");
 	}
 
 	@Test
@@ -98,6 +121,22 @@ class BinaryTreeTest {
 		Node<Integer> rootNode = binaryTreeOps.createTree(elements);
 
 		assertEquals(binaryTreeOps.calculateTreeDepth(rootNode), 3);
+	}
+
+	@Test
+	void calculateNodeLevel() {
+		IBinaryTree<Integer> binaryTreeOps = new BinaryTree<>();
+		Integer[] elements = new Integer[] { 6, 2, 8, 1, 4, 3 };
+
+		Node<Integer> rootNode = binaryTreeOps.createTree(elements);
+
+		Node<Integer> node = binaryTreeOps.getByElement(rootNode, 8);
+		assertEquals(binaryTreeOps.calculateNodeLevel(rootNode, node), 1);
+
+		node = binaryTreeOps.getByElement(rootNode, 4);
+		assertEquals(binaryTreeOps.calculateNodeLevel(rootNode, node), 2);
+
+		assertNull(binaryTreeOps.calculateNodeLevel(rootNode, null));
 	}
 
 }

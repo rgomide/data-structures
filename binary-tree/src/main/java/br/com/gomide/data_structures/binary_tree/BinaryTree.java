@@ -1,6 +1,6 @@
 package br.com.gomide.data_structures.binary_tree;
 
-public class BinaryTree<T extends Comparable> implements IBinaryTree<T> {
+public class BinaryTree<T extends Comparable<?>> implements IBinaryTree<T> {
 
 	@Override
 	public Node<T> createTree(T[] elements) {
@@ -15,12 +15,12 @@ public class BinaryTree<T extends Comparable> implements IBinaryTree<T> {
 	}
 
 	@Override
-	public void insert(Node rootNode, T element) {
+	public void insert(Node<T> rootNode, T element) {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public boolean remove(Node rootNode, T element) {
+	public boolean remove(Node<T> rootNode, T element) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -50,13 +50,19 @@ public class BinaryTree<T extends Comparable> implements IBinaryTree<T> {
 	}
 
 	@Override
-	public Integer calculateNodeLevel(Node<T> node) {
+	public String toString(Node<T> rootNode) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String toString(Node<T> rootNode) {
+	public Node<T> createTree(T element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer calculateNodeLevel(Node<T> rootNode, Node<T> node) {
 		// TODO Auto-generated method stub
 		return null;
 	}
