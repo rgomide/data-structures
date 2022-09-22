@@ -2,8 +2,8 @@
 
 # Summary
 
-[Introduction](#intro)
-[Binary Tree](/binary-tree/)
+- [Introduction](#intro)
+- [Binary Tree](/binary-tree/)
 # Introduction
 
 This my repo to be used in Data Structures classes. 
