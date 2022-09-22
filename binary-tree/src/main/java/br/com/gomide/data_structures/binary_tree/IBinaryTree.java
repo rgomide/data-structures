@@ -88,7 +88,7 @@ public interface IBinaryTree<T extends Comparable<?>> {
 
 	/**
 	 * Should use the String representation of a tree. This is an example for a
-	 * Node<Integer> tree: 6(2(1 4(3)) 8)
+	 * Node<Integer> tree:<br/>root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )
 	 * 
 	 * @param node
 	 * @return String representation of a tree.
