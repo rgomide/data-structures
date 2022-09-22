@@ -2,7 +2,7 @@
 
 # Summary
 
-- [Introduction](#intro)
+- [Introduction](#introduction)
 - [Binary Tree](/binary-tree/)
 # Introduction
 
