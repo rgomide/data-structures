@@ -40,6 +40,34 @@ class BinaryTreeTest {
 	}
 
 	@Test
+	void performASetOfRemovals() {
+		IBinaryTree<Integer> binaryTreeOps = new BinaryTree<>();
+		Integer[] elements = new Integer[] { 37, 20, 10, 30, 80, 100, 5, 180, 90 };
+
+		Node<Integer> rootNode = binaryTreeOps.createTree(elements);
+
+		assertEquals(binaryTreeOps.toString(rootNode),
+				"root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 right:180 )))");
+
+		binaryTreeOps.remove(rootNode, 180);
+		assertEquals(binaryTreeOps.toString(rootNode),
+				"root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 )))");
+
+		binaryTreeOps.remove(rootNode, 80);
+		assertEquals(binaryTreeOps.toString(rootNode),
+				"root:37 (left:20 (left:10 (left:5 )right:30 )right:100 (left:90 ))");
+
+		binaryTreeOps.remove(rootNode, 10);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:37 (left:20 (left:5 right:30 )right:100 (left:90 ))");
+
+		binaryTreeOps.remove(rootNode, 20);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:37 (left:30 (left:5 )right:100 (left:90 ))");
+
+		binaryTreeOps.remove(rootNode, 37);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:100 (left:90 (left:30 (left:5 )))");
+	}
+
+	@Test
 	void getAnElement() {
 		IBinaryTree<Integer> binaryTreeOps = new BinaryTree<>();
 		Integer[] elements = new Integer[] { 6, 2, 8, 1, 4, 3 };
