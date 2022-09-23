@@ -22,13 +22,14 @@ public interface IBinaryTree<T extends Comparable<?>> {
 	/**
 	 * Calculates the degree of a single Node
 	 * 
-	 * @param node
+	 * @param rootNode
+	 * @param nodeElement
 	 * @return degree value
 	 */
-	Integer degree(Node<T> node);
+	Integer degree(Node<T> rootNode, T nodeElement);
 
 	/**
-	 * Given a root node, inserts an element
+	 * Given a root node, inserts an element. Duplicated elements are now allowed.
 	 * 
 	 * @param rootNode
 	 * @param element
@@ -39,26 +40,28 @@ public interface IBinaryTree<T extends Comparable<?>> {
 	 * Given a root node, removes an element
 	 * 
 	 * @param rootNode
-	 * @param element
-	 * @return
+	 * @param nodeElement
+	 * @return return true if a node was removed and false if not
 	 */
-	boolean remove(Node<T> rootNode, T element);
+	boolean remove(Node<T> rootNode, T nodeElement);
 
 	/**
 	 * Get the father node
 	 * 
-	 * @param node
-	 * @return returns the father node or null
+	 * @param rootNode
+	 * @param nodeElement
+	 * @return returns the father node element or null
 	 */
-	Node<T> getFather(Node<T> node);
+	Node<T> getFather(Node<T> rootNode, T nodeElement);
 
 	/**
 	 * Get the brother node
 	 * 
-	 * @param node
+	 * @param rootNode
+	 * @param nodeElement
 	 * @return returns the brother node or null
 	 */
-	Node<T> getBrother(Node<T> node);
+	Node<T> getBrother(Node<T> rootNode, T nodeElement);
 
 	/**
 	 * Find and return a Node by element
@@ -84,11 +87,12 @@ public interface IBinaryTree<T extends Comparable<?>> {
 	 * @param node
 	 * @return node level
 	 */
-	Integer calculateNodeLevel(Node<T> rootNode, Node<T> node);
+	Integer calculateNodeLevel(Node<T> rootNode, T nodeElement);
 
 	/**
 	 * Should use the String representation of a tree. This is an example for a
-	 * Node<Integer> tree:<br/>root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )
+	 * Node<Integer> tree:<br/>
+	 * root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )
 	 * 
 	 * @param node
 	 * @return String representation of a tree.

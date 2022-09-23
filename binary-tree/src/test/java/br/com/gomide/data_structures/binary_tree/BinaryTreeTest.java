@@ -32,9 +32,15 @@ class BinaryTreeTest {
 		binaryTreeOps.insert(rootNode, 1);
 		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 )right:8 )");
 
+		binaryTreeOps.insert(rootNode, 1);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 )right:8 )");		
+		
 		binaryTreeOps.insert(rootNode, 4);
 		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 right:4 )right:8 )");
 
+		binaryTreeOps.insert(rootNode, 3);
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )");
+		
 		binaryTreeOps.insert(rootNode, 3);
 		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )");
 	}
@@ -98,16 +104,10 @@ class BinaryTreeTest {
 
 		Node<Integer> rootNode = binaryTreeOps.createTree(elements);
 
-		Node<Integer> node = binaryTreeOps.getByElement(rootNode, 8);
-		assertEquals(binaryTreeOps.degree(node), 0);
-
-		node = binaryTreeOps.getByElement(rootNode, 2);
-		assertEquals(binaryTreeOps.degree(node), 2);
-
-		node = binaryTreeOps.getByElement(rootNode, 4);
-		assertEquals(binaryTreeOps.degree(node), 1);
-
-		assertNull(binaryTreeOps.degree(null));
+		assertEquals(binaryTreeOps.degree(rootNode, 8), 0);
+		assertEquals(binaryTreeOps.degree(rootNode, 2), 2);
+		assertEquals(binaryTreeOps.degree(rootNode, 4), 1);
+		assertNull(binaryTreeOps.degree(rootNode, 10));
 	}
 
 	@Test
@@ -117,14 +117,9 @@ class BinaryTreeTest {
 
 		Node<Integer> rootNode = binaryTreeOps.createTree(elements);
 
-		Node<Integer> node = binaryTreeOps.getByElement(rootNode, 8);
-		assertEquals(binaryTreeOps.getFather(node).getValue(), 6);
-
-		node = binaryTreeOps.getByElement(rootNode, 1);
-		assertEquals(binaryTreeOps.getFather(node).getValue(), 2);
-
-		node = binaryTreeOps.getByElement(rootNode, 6);
-		assertNull(binaryTreeOps.getFather(node));
+		assertEquals(binaryTreeOps.getFather(rootNode, 8).getValue(), 6);
+		assertEquals(binaryTreeOps.getFather(rootNode, 1).getValue(), 2);
+		assertNull(binaryTreeOps.getFather(rootNode, 6));
 	}
 
 	@Test
@@ -134,11 +129,8 @@ class BinaryTreeTest {
 
 		Node<Integer> rootNode = binaryTreeOps.createTree(elements);
 
-		Node<Integer> node = binaryTreeOps.getByElement(rootNode, 8);
-		assertEquals(binaryTreeOps.getBrother(node).getValue(), 2);
-
-		node = binaryTreeOps.getByElement(rootNode, 3);
-		assertNull(binaryTreeOps.getBrother(node));
+		assertEquals(binaryTreeOps.getBrother(rootNode, 8).getValue(), 2);
+		assertNull(binaryTreeOps.getBrother(rootNode, 3));
 	}
 
 	@Test
@@ -158,12 +150,8 @@ class BinaryTreeTest {
 
 		Node<Integer> rootNode = binaryTreeOps.createTree(elements);
 
-		Node<Integer> node = binaryTreeOps.getByElement(rootNode, 8);
-		assertEquals(binaryTreeOps.calculateNodeLevel(rootNode, node), 1);
-
-		node = binaryTreeOps.getByElement(rootNode, 4);
-		assertEquals(binaryTreeOps.calculateNodeLevel(rootNode, node), 2);
-
+		assertEquals(binaryTreeOps.calculateNodeLevel(rootNode, 8), 1);
+		assertEquals(binaryTreeOps.calculateNodeLevel(rootNode, 4), 2);
 		assertNull(binaryTreeOps.calculateNodeLevel(rootNode, null));
 	}
 
