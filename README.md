@@ -6,7 +6,7 @@
 - [Binary Tree](/binary-tree/)
 # Introduction
 
-This my repo to be used in Data Structures classes. 
+I'm using this repo in my Data Structures classes. 
 
 Here we have some examples and exercises. This repo will be updated on demand.
 
