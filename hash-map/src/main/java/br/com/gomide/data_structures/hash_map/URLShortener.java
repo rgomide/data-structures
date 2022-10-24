@@ -1,6 +1,6 @@
 package br.com.gomide.data_structures.hash_map;
 
-public class URLShortner implements IURLShortner {
+public class URLShortener implements IURLShortener {
 
 	@Override
 	public String encode(String url) throws RuntimeException {
