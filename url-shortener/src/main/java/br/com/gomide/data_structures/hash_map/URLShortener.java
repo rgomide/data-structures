@@ -14,4 +14,10 @@ public class URLShortener implements IURLShortener {
 		return null;
 	}
 
+	@Override
+	public String getPrefix() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
