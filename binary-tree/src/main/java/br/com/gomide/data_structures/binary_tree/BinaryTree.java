@@ -16,7 +16,6 @@ public class BinaryTree<T extends Comparable<?>> implements IBinaryTree<T> {
 
 	@Override
 	public Integer degree(Node<T> rootNode, T nodeElement) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
