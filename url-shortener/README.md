@@ -12,6 +12,6 @@ The `IURLShortener` interface contains three methods to generate a short URL:
 
 We have a test class to check the [URLShortener](src/main/java/br/com/gomide/data_structures/hash_map/URLShortener.java) implementation.
 
-You should open the [IURLShortenerTest](src/test/java/br/com/gomide/data_structures/hash_map/URLShortenerTest.java) to know how `URLShortener` will work.
+You should open the [URLShortenerTest](src/test/java/br/com/gomide/data_structures/hash_map/URLShortenerTest.java) to know how `URLShortener` will work.
 
 Complete the `URLShortener` implementation to make all tests green.
