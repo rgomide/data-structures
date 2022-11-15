@@ -7,19 +7,19 @@ public class GraphService implements IGraphService {
 	@Override
 	public void addNodes(List<Node> node, Graph graph) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void addNode(Node node, Graph graph) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
-	public void connectNode(Node firstNode, Node secondNode, Graph graph) {
+	public void connectNode(String firstNode, String secondNode, Graph graph) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class GraphService implements IGraphService {
 	}
 
 	@Override
-	public int nodeDegree(Node node, Graph graph) {
+	public int nodeDegree(String node, Graph graph) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -53,13 +53,13 @@ public class GraphService implements IGraphService {
 	}
 
 	@Override
-	public String showPath(Node origin, Node destination, DirectedGraph graph) {
+	public String showPath(String origin, String destination, DirectedGraph graph) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String showPath(Node origin, Node destination, NonDirectedGraph graph) {
+	public String showPath(String origin, String destination, NonDirectedGraph graph) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -69,5 +69,7 @@ public class GraphService implements IGraphService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

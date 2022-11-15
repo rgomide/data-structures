@@ -8,21 +8,21 @@ public interface IGraphService {
 
 	public void addNode(Node node, Graph graph);
 
-	public void connectNode(Node firstNode, Node secondNode, Graph graph);
+	public void connectNode(String firstNode, String secondNode, Graph graph);
 
 	public int countLoops(Graph graph);
 
 	public int countMultipleLink(Graph graph);
 
-	public int nodeDegree(Node node, Graph graph);
+	public int nodeDegree(String node, Graph graph);
 
 	public boolean isConnected(Graph graph);
 
 	public boolean isComplete(Graph graph);
 
-	public String showPath(Node origin, Node destination, DirectedGraph graph);
+	public String showPath(String origin, String destination, DirectedGraph graph);
 
-	public String showPath(Node origin, Node destination, NonDirectedGraph graph);
+	public String showPath(String origin, String destination, NonDirectedGraph graph);
 
 	public String toString(Graph graph);
 
