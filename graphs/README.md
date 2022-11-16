@@ -10,4 +10,6 @@ We have a test class to check the [GraphService](src/main/java/br/com/gomide/dat
 
 You should open the [GraphServiceTest](src/test/java/br/com/gomide/data_structures/graph/service/GraphServiceTest.java) to know how `GraphService` will work.
 
+Also, implement the [Graph](src/main/java/br/com/gomide/data_structures/graph/model/Graph.java), [NonDirectedGraph](src/main/java/br/com/gomide/data_structures/graph/model/NonDirectedGraph.java) and [DirectedGraph](src/main/java/br/com/gomide/data_structures/graph/model/DirectedGraph.java).
+
 Complete the `GraphService` implementation to make all tests green.
