@@ -262,4 +262,125 @@ class GraphServiceTest {
 		assertFalse(graphService.isComplete(graph));
 	}
 
+	@Test
+	void showAValidPathForNonDirectedGraph() {
+		IGraphService graphService = new GraphService();
+		List<String> nodes = new ArrayList<>();
+		Graph graph = new NonDirectedGraph();
+
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
+		nodes.add("E");
+		nodes.add("F");
+
+		graphService.addNodes(nodes, graph);
+
+		graphService.connectNode("A", "B", graph);
+		graphService.connectNode("B", "C", graph);
+		graphService.connectNode("C", "D", graph);
+		graphService.connectNode("D", "E", graph);
+		graphService.connectNode("E", "F", graph);
+
+		graphService.connectNode("B", "D", graph);
+		graphService.connectNode("C", "E", graph);
+
+		String path = graphService.showPath("A", "F", (NonDirectedGraph) graph);
+
+		assertTrue(path.startsWith("Start -> A B"));
+		assertTrue(path.endsWith("E F -> End"));
+	}
+
+	@Test
+	void showAValidPathForDirectedGraph() {
+		IGraphService graphService = new GraphService();
+		List<String> nodes = new ArrayList<>();
+		Graph graph = new NonDirectedGraph();
+
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
+		nodes.add("E");
+		nodes.add("F");
+
+		graphService.addNodes(nodes, graph);
+
+		graphService.connectNode("A", "B", graph);
+		graphService.connectNode("B", "C", graph);
+		graphService.connectNode("C", "D", graph);
+		graphService.connectNode("D", "E", graph);
+		graphService.connectNode("E", "F", graph);
+
+		graphService.connectNode("D", "B", graph);
+		graphService.connectNode("E", "C", graph);
+
+		String path = graphService.showPath("A", "F", (NonDirectedGraph) graph);
+
+		assertTrue(path.startsWith("Start -> A B"));
+		assertTrue(path.endsWith("E F -> End"));
+	}
+
+	@Test
+	void doesNotShowAPathForNonDirectedGraphBecauseIsInvalid() {
+		IGraphService graphService = new GraphService();
+		List<String> nodes = new ArrayList<>();
+		Graph graph = new NonDirectedGraph();
+
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
+		nodes.add("E");
+		nodes.add("F");
+		nodes.add("G");
+
+		graphService.addNodes(nodes, graph);
+
+		graphService.connectNode("A", "B", graph);
+		graphService.connectNode("B", "C", graph);
+		graphService.connectNode("C", "D", graph);
+		graphService.connectNode("D", "E", graph);
+		graphService.connectNode("E", "F", graph);
+
+		graphService.connectNode("B", "D", graph);
+		graphService.connectNode("C", "E", graph);
+
+		String path = graphService.showPath("A", "G", (NonDirectedGraph) graph);
+
+		assertTrue(path.equals("INVALID PATH"));
+	}
+
+	@Test
+	void doesNotShowAPathForDirectedGraphBecauseIsInvalid() {
+		IGraphService graphService = new GraphService();
+		List<String> nodes = new ArrayList<>();
+		Graph graph = new DirectedGraph();
+
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
+		nodes.add("E");
+		nodes.add("F");
+		nodes.add("G");
+
+		graphService.addNodes(nodes, graph);
+
+		graphService.connectNode("A", "B", graph);
+		graphService.connectNode("B", "C", graph);
+		graphService.connectNode("C", "D", graph);
+		graphService.connectNode("D", "E", graph);
+		graphService.connectNode("E", "F", graph);
+		graphService.connectNode("G", "F", graph);
+
+		graphService.connectNode("B", "D", graph);
+		graphService.connectNode("C", "E", graph);
+
+		String path = graphService.showPath("A", "G", (DirectedGraph) graph);
+
+		assertTrue(path.equals("INVALID PATH"));
+	}
+
 }
