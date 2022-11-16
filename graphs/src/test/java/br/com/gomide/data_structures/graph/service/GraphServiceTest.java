@@ -1,10 +1,17 @@
-package br.com.gomide.data_structures.graph;
+package br.com.gomide.data_structures.graph.service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
+import br.com.gomide.data_structures.graph.model.DirectedGraph;
+import br.com.gomide.data_structures.graph.model.Graph;
+import br.com.gomide.data_structures.graph.model.NonDirectedGraph;
 
 class GraphServiceTest {
 

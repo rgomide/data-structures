@@ -1,6 +1,10 @@
-package br.com.gomide.data_structures.graph;
+package br.com.gomide.data_structures.graph.service;
 
 import java.util.List;
+
+import br.com.gomide.data_structures.graph.model.DirectedGraph;
+import br.com.gomide.data_structures.graph.model.Graph;
+import br.com.gomide.data_structures.graph.model.NonDirectedGraph;
 
 public interface IGraphService {
 
