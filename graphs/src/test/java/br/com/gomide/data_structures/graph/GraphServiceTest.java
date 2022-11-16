@@ -13,10 +13,10 @@ class GraphServiceTest {
 		IGraphService graphService = new GraphService();
 		Graph graph = new NonDirectedGraph();
 
-		graphService.addNode(new Node("A"), graph);
-		graphService.addNode(new Node("B"), graph);
-		graphService.addNode(new Node("C"), graph);
-		graphService.addNode(new Node("D"), graph);
+		graphService.addNode("A", graph);
+		graphService.addNode("B", graph);
+		graphService.addNode("C", graph);
+		graphService.addNode("D", graph);
 
 		assertTrue(graphService.toString(graph).equals("Nodes: A B C D"));
 	}
@@ -24,13 +24,13 @@ class GraphServiceTest {
 	@Test
 	void addNodeList() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new NonDirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
 
@@ -40,13 +40,13 @@ class GraphServiceTest {
 	@Test
 	void configureNonDirectedGraph() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new NonDirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
 
@@ -69,13 +69,13 @@ class GraphServiceTest {
 	@Test
 	void configureDirectedGraph() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new DirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
 
@@ -98,13 +98,13 @@ class GraphServiceTest {
 	@Test
 	void countThreeLoops() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new NonDirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
 
@@ -123,13 +123,13 @@ class GraphServiceTest {
 	@Test
 	void countTwooMultipleLinks() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new NonDirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
 
@@ -147,13 +147,13 @@ class GraphServiceTest {
 	@Test
 	void checkAllNodeDegrees() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new NonDirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
 
@@ -173,13 +173,13 @@ class GraphServiceTest {
 	@Test
 	void checkConnectedGraph() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new NonDirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
 
@@ -195,15 +195,15 @@ class GraphServiceTest {
 	@Test
 	void checkDisconnectedGraph() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new NonDirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
-		nodes.add(new Node("E"));
-		nodes.add(new Node("F"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
+		nodes.add("E");
+		nodes.add("F");
 
 		graphService.addNodes(nodes, graph);
 
@@ -220,13 +220,13 @@ class GraphServiceTest {
 	@Test
 	void checkCompleteGraph() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new NonDirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
 
@@ -243,13 +243,13 @@ class GraphServiceTest {
 	@Test
 	void checkUncompleteGraph() {
 		IGraphService graphService = new GraphService();
-		List<Node> nodes = new ArrayList<>();
+		List<String> nodes = new ArrayList<>();
 		Graph graph = new NonDirectedGraph();
 
-		nodes.add(new Node("A"));
-		nodes.add(new Node("B"));
-		nodes.add(new Node("C"));
-		nodes.add(new Node("D"));
+		nodes.add("A");
+		nodes.add("B");
+		nodes.add("C");
+		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
 

@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface IGraphService {
 
-	public void addNodes(List<Node> node, Graph graph);
+	public void addNodes(List<String> nodes, Graph graph);
 
-	public void addNode(Node node, Graph graph);
+	public void addNode(String node, Graph graph);
 
 	public void connectNode(String firstNode, String secondNode, Graph graph);
 

@@ -5,13 +5,13 @@ import java.util.List;
 public class GraphService implements IGraphService {
 
 	@Override
-	public void addNodes(List<Node> node, Graph graph) {
+	public void addNodes(List<String> nodes, Graph graph) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void addNode(Node node, Graph graph) {
+	public void addNode(String node, Graph graph) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -69,6 +69,8 @@ public class GraphService implements IGraphService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 	
 
