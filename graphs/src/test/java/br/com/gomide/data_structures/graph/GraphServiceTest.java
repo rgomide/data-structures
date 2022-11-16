@@ -56,12 +56,14 @@ class GraphServiceTest {
 		graphService.connectNode("D", "A", graph);
 		graphService.connectNode("A", "C", graph);
 
-		assertTrue(graphService.toString(graph).contains("Nodes: A B C D"));
-		assertTrue(graphService.toString(graph).contains("Link: A B"));
-		assertTrue(graphService.toString(graph).contains("Link: B C"));
-		assertTrue(graphService.toString(graph).contains("Link: C D"));
-		assertTrue(graphService.toString(graph).contains("Link: D A"));
-		assertTrue(graphService.toString(graph).contains("Link: A C"));
+		String graphRepresentation = graphService.toString(graph);
+
+		assertTrue(graphRepresentation.contains("Nodes: A B C D"));
+		assertTrue(graphRepresentation.contains("Link: A B"));
+		assertTrue(graphRepresentation.contains("Link: B C"));
+		assertTrue(graphRepresentation.contains("Link: C D"));
+		assertTrue(graphRepresentation.contains("Link: D A"));
+		assertTrue(graphRepresentation.contains("Link: A C"));
 	}
 
 	@Test
@@ -83,12 +85,14 @@ class GraphServiceTest {
 		graphService.connectNode("D", "A", graph);
 		graphService.connectNode("A", "C", graph);
 
-		assertTrue(graphService.toString(graph).contains("Nodes: A B C D"));
-		assertTrue(graphService.toString(graph).contains("Link: A -> B"));
-		assertTrue(graphService.toString(graph).contains("Link: B -> C"));
-		assertTrue(graphService.toString(graph).contains("Link: C -> D"));
-		assertTrue(graphService.toString(graph).contains("Link: D -> A"));
-		assertTrue(graphService.toString(graph).contains("Link: A -> C"));
+		String graphRepresentation = graphService.toString(graph);
+
+		assertTrue(graphRepresentation.contains("Nodes: A B C D"));
+		assertTrue(graphRepresentation.contains("Link: A -> B"));
+		assertTrue(graphRepresentation.contains("Link: B -> C"));
+		assertTrue(graphRepresentation.contains("Link: C -> D"));
+		assertTrue(graphRepresentation.contains("Link: D -> A"));
+		assertTrue(graphRepresentation.contains("Link: A -> C"));
 	}
 
 	@Test
@@ -211,6 +215,51 @@ class GraphServiceTest {
 		graphService.connectNode("E", "F", graph);
 
 		assertFalse(graphService.isConnected(graph));
+	}
+
+	@Test
+	void checkCompleteGraph() {
+		IGraphService graphService = new GraphService();
+		List<Node> nodes = new ArrayList<>();
+		Graph graph = new NonDirectedGraph();
+
+		nodes.add(new Node("A"));
+		nodes.add(new Node("B"));
+		nodes.add(new Node("C"));
+		nodes.add(new Node("D"));
+
+		graphService.addNodes(nodes, graph);
+
+		graphService.connectNode("A", "B", graph);
+		graphService.connectNode("B", "C", graph);
+		graphService.connectNode("C", "D", graph);
+		graphService.connectNode("D", "A", graph);
+		graphService.connectNode("A", "C", graph);
+		graphService.connectNode("B", "D", graph);
+
+		assertTrue(graphService.isComplete(graph));
+	}
+
+	@Test
+	void checkUncompleteGraph() {
+		IGraphService graphService = new GraphService();
+		List<Node> nodes = new ArrayList<>();
+		Graph graph = new NonDirectedGraph();
+
+		nodes.add(new Node("A"));
+		nodes.add(new Node("B"));
+		nodes.add(new Node("C"));
+		nodes.add(new Node("D"));
+
+		graphService.addNodes(nodes, graph);
+
+		graphService.connectNode("A", "B", graph);
+		graphService.connectNode("B", "C", graph);
+		graphService.connectNode("C", "D", graph);
+		graphService.connectNode("A", "C", graph);
+		graphService.connectNode("B", "D", graph);
+
+		assertFalse(graphService.isComplete(graph));
 	}
 
 }
