@@ -14,7 +14,11 @@ class GraphServiceTest {
 		Graph graph = new NonDirectedGraph();
 
 		graphService.addNode("A", graph);
+		graphService.addNode("A", graph);
+		graphService.addNode("A", graph);
 		graphService.addNode("B", graph);
+		graphService.addNode("C", graph);
+		graphService.addNode("C", graph);
 		graphService.addNode("C", graph);
 		graphService.addNode("D", graph);
 
@@ -29,7 +33,11 @@ class GraphServiceTest {
 
 		nodes.add("A");
 		nodes.add("B");
+		nodes.add("B");
+		nodes.add("B");
 		nodes.add("C");
+		nodes.add("D");
+		nodes.add("D");
 		nodes.add("D");
 
 		graphService.addNodes(nodes, graph);
