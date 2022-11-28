@@ -311,7 +311,7 @@ class GraphServiceTest {
 	void showAValidPathForDirectedGraph() {
 		IGraphService graphService = new GraphService();
 		List<String> nodes = new ArrayList<>();
-		Graph graph = new NonDirectedGraph();
+		Graph graph = new DirectedGraph();
 
 		nodes.add("A");
 		nodes.add("B");
@@ -331,7 +331,7 @@ class GraphServiceTest {
 		graphService.connectNode("D", "B", graph);
 		graphService.connectNode("E", "C", graph);
 
-		String path = graphService.showPath("A", "F", (NonDirectedGraph) graph);
+		String path = graphService.showPath("A", "F", (DirectedGraph) graph);
 
 		assertTrue(path.startsWith("Start -> A B"));
 		assertTrue(path.endsWith("E F -> End"));
