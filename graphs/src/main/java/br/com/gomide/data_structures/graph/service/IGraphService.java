@@ -14,6 +14,8 @@ public interface IGraphService {
 
 	public void connectNode(String firstNode, String secondNode, Graph graph);
 
+	public void connectNode(String firstNode, String secondNode, Integer weight, Graph graph);
+
 	public int countLoops(Graph graph);
 
 	public int countMultipleLink(Graph graph);

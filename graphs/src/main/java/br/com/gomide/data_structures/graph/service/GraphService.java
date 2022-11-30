@@ -11,19 +11,25 @@ public class GraphService implements IGraphService {
 	@Override
 	public void addNodes(List<String> nodes, Graph graph) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void addNode(String node, Graph graph) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void connectNode(String firstNode, String secondNode, Graph graph) {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	@Override
+	public void connectNode(String firstNode, String secondNode, Integer weight, Graph graph) {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
@@ -73,9 +79,5 @@ public class GraphService implements IGraphService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
-
-	
 
 }
