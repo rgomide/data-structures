@@ -30,6 +30,10 @@ public interface IGraphService {
 
 	public String showPath(String origin, String destination, NonDirectedGraph graph);
 
+	public String showShortestPath(String origin, String destination, DirectedGraph graph);
+
+	public String showShortestPath(String origin, String destination, NonDirectedGraph graph);
+
 	public String toString(Graph graph);
 
 }
