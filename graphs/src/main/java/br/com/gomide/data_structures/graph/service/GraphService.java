@@ -80,4 +80,16 @@ public class GraphService implements IGraphService {
 		return null;
 	}
 
+	@Override
+	public String showShortestPath(String origin, String destination, DirectedGraph graph) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String showShortestPath(String origin, String destination, NonDirectedGraph graph) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
