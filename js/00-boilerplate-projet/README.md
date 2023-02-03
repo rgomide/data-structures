@@ -1,3 +1,4 @@
+## Description
 This is a boilerplate of a JavaScript project with jest support.
 
 ## Main commands
