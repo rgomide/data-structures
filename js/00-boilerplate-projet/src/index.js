@@ -3,15 +3,14 @@ function hello() {
 }
 
 function sum(a, b) {
-  if (isNumber(a) && isNumber(b)) {
+  if (isValidValue(a) && isValidValue(b)) {
     return a + b
-  } else {
-    return undefined
   }
+  throw 'Valores inválidos'
 }
 
-function isNumber(value) {
-  return typeof value == 'number'
+function isValidValue(value) {
+  return typeof value == 'number' || value == null
 }
 
 module.exports = {
