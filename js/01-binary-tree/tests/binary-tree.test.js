@@ -80,7 +80,7 @@ describe('binary-tree tests', () => {
       let stringTree = toString(tree)
       expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 right:180 )))")
 
-      remove(tree, 180)
+      expect(remove(tree, 180)).toBeTruthy()
       stringTree = toString(tree)
       expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 )))")
 
@@ -99,6 +99,8 @@ describe('binary-tree tests', () => {
       remove(tree, 37)
       stringTree = toString(tree)
       expect(stringTree).toEqual("root:100 (left:90 (left:30 (left:5 )))")
+
+      expect(remove(tree, 370)).toBeFalsy()
     })
 
   })
