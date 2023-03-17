@@ -107,14 +107,14 @@ describe('binary-tree tests', () => {
 
     test('return an existing element', () => {
       const tree = createTree([6, 2, 8, 1, 4, 3])
-      const node = getByElement(tree, 8)
+      const node = getElement(tree, 8)
 
       expect(node.value).toEqual(8)
     })
 
-    test('do not find an existing element', () => {
+    test('do not find an element', () => {
       const tree = createTree([6, 2, 8, 1, 4, 3])
-      const node = getByElement(tree, 10)
+      const node = getElement(tree, 10)
 
       expect(node).toBeUndefined()
     })
