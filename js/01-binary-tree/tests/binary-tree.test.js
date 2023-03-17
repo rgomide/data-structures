@@ -78,27 +78,27 @@ describe('binary-tree tests', () => {
       const tree = createTree([37, 20, 10, 30, 80, 100, 5, 180, 90])
 
       let stringTree = toString(tree)
-      expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 right:180 )))");
+      expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 right:180 )))")
 
-      remove(tree, 180);
+      remove(tree, 180)
       stringTree = toString(tree)
-      expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 )))");
+      expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 )))")
 
-      remove(tree, 80);
+      remove(tree, 80)
       stringTree = toString(tree)
-      expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:100 (left:90 ))");
+      expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:100 (left:90 ))")
 
-      remove(tree, 10);
+      remove(tree, 10)
       stringTree = toString(tree)
-      expect(stringTree).toEqual("root:37 (left:20 (left:5 right:30 )right:100 (left:90 ))");
+      expect(stringTree).toEqual("root:37 (left:20 (left:5 right:30 )right:100 (left:90 ))")
 
-      remove(tree, 20);
+      remove(tree, 20)
       stringTree = toString(tree)
-      expect(stringTree).toEqual("root:37 (left:30 (left:5 )right:100 (left:90 ))");
+      expect(stringTree).toEqual("root:37 (left:30 (left:5 )right:100 (left:90 ))")
 
-      remove(tree, 37);
+      remove(tree, 37)
       stringTree = toString(tree)
-      expect(stringTree).toEqual("root:100 (left:90 (left:30 (left:5 )))");
+      expect(stringTree).toEqual("root:100 (left:90 (left:30 (left:5 )))")
     })
 
   })
@@ -106,15 +106,15 @@ describe('binary-tree tests', () => {
   describe('getElement function', () => {
 
     test('return an existing element', () => {
-      const tree = createTree([6, 2, 8, 1, 4, 3]);
-      const node = getByElement(tree, 8);
+      const tree = createTree([6, 2, 8, 1, 4, 3])
+      const node = getByElement(tree, 8)
 
       expect(node.value).toEqual(8)
     })
 
     test('do not find an existing element', () => {
-      const tree = createTree([6, 2, 8, 1, 4, 3]);
-      const node = getByElement(tree, 10);
+      const tree = createTree([6, 2, 8, 1, 4, 3])
+      const node = getByElement(tree, 10)
 
       expect(node).toBeUndefined()
     })
@@ -124,14 +124,61 @@ describe('binary-tree tests', () => {
   describe('degree function', () => {
 
     test('check nodes degrees', () => {
-      const tree = createTree([6, 2, 8, 1, 4, 3]);
-      const node = getByElement(tree, 8);
+      const tree = createTree([6, 2, 8, 1, 4, 3])
 
-      expect(degree(tree, 8)).toEqual(0);
-      expect(degree(tree, 2)).toEqual(2);
-      expect(degree(tree, 4)).toEqual(1);
-      
-      expect(degree(tree, 10)).toBeUndefined();
+      expect(degree(tree, 8)).toEqual(0)
+      expect(degree(tree, 2)).toEqual(2)
+      expect(degree(tree, 4)).toEqual(1)
+
+      expect(degree(tree, 10)).toBeUndefined()
+    })
+
+  })
+
+  describe('getFather function', () => {
+
+    test('check fathers', () => {
+      const tree = createTree([6, 2, 8, 1, 4, 3])
+
+      expect(getFather(tree, 8).value).toEqual(6)
+      expect(getFather(tree, 1).value).toEqual(2)
+
+      expect(getFather(tree, 6)).toBeUndefined()
+    })
+
+  })
+
+  describe('getBrother function', () => {
+
+    test('check node brothers', () => {
+      const tree = createTree([6, 2, 8, 1, 4, 3])
+
+      expect(getBrother(tree, 8).value).toEqual(2)
+
+      expect(getBrother(tree, 3)).toBeUndefined()
+    })
+
+  })
+
+  describe('calculateTreeDepth function', () => {
+
+    test('check tree depth', () => {
+      const tree = createTree([6, 2, 8, 1, 4, 3])
+
+      expect(calculateTreeDepth(tree)).toEqual(3)
+    })
+
+  })
+
+  describe('calculateNodeLevel function', () => {
+
+    test('check node levels', () => {
+      const tree = createTree([6, 2, 8, 1, 4, 3])
+
+      expect(calculateNodeLevel(tree, 8)).toEqual(1)
+      expect(calculateNodeLevel(tree, 4)).toEqual(2)
+
+      expect(calculateNodeLevel(tree, 40)).toBeUndefined()
     })
 
   })
