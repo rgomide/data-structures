@@ -1,0 +1,16 @@
+{
+  "name": "00-boilerplate-projet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-coverage": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "29.4.0",
+    "jest": "29.4.1"
+  }
+}

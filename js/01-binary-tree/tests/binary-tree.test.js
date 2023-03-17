@@ -1,0 +1,139 @@
+const {
+  createTree,
+  degree,
+  insert,
+  remove,
+  getFather,
+  getBrother,
+  getElement,
+  calculateTreeDepth,
+  calculateNodeLevel,
+  toString
+} = require('../src/binary-tree')
+
+describe('binary-tree tests', () => {
+
+  describe('createTree function', () => {
+
+    test('create a new tree with an array of elements', () => {
+      const elements = [6, 2, 8, 1, 4, 3]
+      const tree = createTree(elements)
+      const stringTree = toString(tree)
+
+      expect(stringTree).toEqual("root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )")
+    })
+
+    test('create a new tree with a single element', () => {
+      const element = 6
+      const tree = createTree(element)
+      const stringTree = toString(tree)
+
+      expect(stringTree).toEqual("root:6 ")
+    })
+
+  })
+
+  describe('insert function', () => {
+
+    test('perform a set of insertions', () => {
+      const tree = createTree(6)
+
+      let stringTree = toString(tree)
+      expect(stringTree).toEqual("root:6 ")
+
+      insert(tree, 2)
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:6 (left:2 )")
+
+      insert(tree, 8)
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:6 (left:2 right:8 )")
+
+      insert(tree, 1)
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:6 (left:2 (left:1 )right:8 )")
+
+      insert(tree, 1)
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:6 (left:2 (left:1 )right:8 )")
+
+      insert(tree, 4)
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:6 (left:2 (left:1 right:4 )right:8 )")
+
+      insert(tree, 3)
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )")
+
+      insert(tree, 3)
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )")
+    })
+
+  })
+
+  describe('remove function', () => {
+
+    test('perform a set of removals', () => {
+      const tree = createTree([37, 20, 10, 30, 80, 100, 5, 180, 90])
+
+      let stringTree = toString(tree)
+      expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 right:180 )))");
+
+      remove(tree, 180);
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:80 (right:100 (left:90 )))");
+
+      remove(tree, 80);
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:37 (left:20 (left:10 (left:5 )right:30 )right:100 (left:90 ))");
+
+      remove(tree, 10);
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:37 (left:20 (left:5 right:30 )right:100 (left:90 ))");
+
+      remove(tree, 20);
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:37 (left:30 (left:5 )right:100 (left:90 ))");
+
+      remove(tree, 37);
+      stringTree = toString(tree)
+      expect(stringTree).toEqual("root:100 (left:90 (left:30 (left:5 )))");
+    })
+
+  })
+
+  describe('getElement function', () => {
+
+    test('return an existing element', () => {
+      const tree = createTree([6, 2, 8, 1, 4, 3]);
+      const node = getByElement(tree, 8);
+
+      expect(node.value).toEqual(8)
+    })
+
+    test('do not find an existing element', () => {
+      const tree = createTree([6, 2, 8, 1, 4, 3]);
+      const node = getByElement(tree, 10);
+
+      expect(node).toBeUndefined()
+    })
+
+  })
+
+  describe('degree function', () => {
+
+    test('check nodes degrees', () => {
+      const tree = createTree([6, 2, 8, 1, 4, 3]);
+      const node = getByElement(tree, 8);
+
+      expect(degree(tree, 8)).toEqual(0);
+      expect(degree(tree, 2)).toEqual(2);
+      expect(degree(tree, 4)).toEqual(1);
+      
+      expect(degree(tree, 10)).toBeUndefined();
+    })
+
+  })
+
+})
