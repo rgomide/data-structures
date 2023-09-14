@@ -3,9 +3,9 @@
 # Summary
 
 - [Introduction](#introduction)
-- [Binary Tree](/binary-tree/)
-- [URL Shortener](/url-shortener/)
-- [Graphs](/graphs)
+- [Binary Tree](/java/binary-tree/)
+- [URL Shortener](/java/url-shortener/)
+- [Graphs](/java/graphs)
 # Introduction
 
 I'm using this repo in my Data Structures classes. 
