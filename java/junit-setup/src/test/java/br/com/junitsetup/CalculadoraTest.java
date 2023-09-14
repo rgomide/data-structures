@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class CalculadoraTest {
 
   @Test
-  public void soma_DoisValoresInteiros_ComSucesso() {
+  public void somaDoisValoresInteirosComSucesso() {
     Integer a = 1;
     Integer b = 3;
 
@@ -17,7 +17,7 @@ public class CalculadoraTest {
   }
 
   @Test
-  public void soma_DoisValoresDecimais_ComSucesso() {
+  public void somaDoisValoresDecimaisComSucesso() {
     Double a = 1.0;
     Double b = 3.0;
 
@@ -27,7 +27,7 @@ public class CalculadoraTest {
   }
 
   @Test
-  public void soma_UmValorNullComUmDouble_RetornaErro() {
+  public void somaUmValorNullComUmDoubleRetornaErro() {
     Double a = 1.0;
 
     RuntimeException exception = assertThrows(
@@ -44,7 +44,7 @@ public class CalculadoraTest {
   }
 
   @Test
-  public void soma_UmValorNullComUmInteiro_RetornaErro() {
+  public void somaUmValorNullComUmInteiroRetornaErro() {
     Integer a = 1;
 
     RuntimeException exception = assertThrows(
