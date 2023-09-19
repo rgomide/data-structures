@@ -89,6 +89,7 @@ public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinked
   public void clear() {
     this.first = null;
     this.last = null;
+    this.navigationPointer = null;
   }
 
   @Override
