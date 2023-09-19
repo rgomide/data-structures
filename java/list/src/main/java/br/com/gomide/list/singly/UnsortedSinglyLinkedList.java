@@ -6,16 +6,18 @@ import br.com.gomide.list.interfaces.IUnsortedList;
 
 public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinkedList<T>, IUnsortedList<T> {
 
-  private ListNode<T, T> first;
-  private ListNode<T, T> last;
+  private ListNode<T> first;
+  private ListNode<T> last;
+  private ListNode<T> navigationPointer;
 
   @Override
   public void insertAtInit(T value) {
-    ListNode<T, T> newElement = new ListNode<T, T>(value);
+    ListNode<T> newElement = new ListNode<T>(value);
 
     if (first == null) {
       this.first = newElement;
       this.last = newElement;
+      this.navigationPointer = newElement;
     } else {
       newElement.setNext(this.first);
       this.first = newElement;
@@ -24,11 +26,12 @@ public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinked
 
   @Override
   public void insertAtEnd(T value) {
-    ListNode<T, T> newElement = new ListNode<T, T>(value);
+    ListNode<T> newElement = new ListNode<T>(value);
 
     if (first == null) {
       this.first = newElement;
       this.last = newElement;
+      this.navigationPointer = newElement;
     } else {
       this.last.setNext(newElement);
       this.last = newElement;
@@ -37,7 +40,7 @@ public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinked
 
   @Override
   public T find(T value) {
-    ListNode<T, T> element = this.first;
+    ListNode<T> element = this.first;
 
     while (element != null) {
       T currentValue = element.getValue();
@@ -63,8 +66,8 @@ public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinked
       return true;
     }
 
-    ListNode<T, T> element = this.first;
-    ListNode<T, T> previousNode = null;
+    ListNode<T> element = this.first;
+    ListNode<T> previousNode = null;
 
     while (element != null) {
       T currentValue = element.getValue();
@@ -92,7 +95,7 @@ public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinked
   public String listContent() {
     StringBuilder listContent = new StringBuilder();
 
-    ListNode<T, T> element = this.first;
+    ListNode<T> element = this.first;
 
     while (element != null) {
       listContent.append(element.getValue());
@@ -104,6 +107,26 @@ public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinked
     listContent.append("null");
 
     return listContent.toString();
+  }
+
+  @Override
+  public void clearNavigation() {
+    this.navigationPointer = this.first;
+  }
+
+  @Override
+  public T getNextElement() {
+    if (this.first == null || this.last == null) {
+      return null;
+    }
+
+    if (this.navigationPointer == null) {
+      return null;
+    }
+
+    T value = this.navigationPointer.getValue();
+    this.navigationPointer = this.navigationPointer.getNext();
+    return value;
   }
 
 }

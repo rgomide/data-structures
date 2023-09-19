@@ -47,4 +47,22 @@ public class UnsortedDoublyLinkedList<T extends Object> implements IUnsortedList
     throw new UnsupportedOperationException("Unimplemented method 'insertAtEnd'");
   }
 
+  @Override
+  public void clearNavigation() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'clearNavigation'");
+  }
+
+  @Override
+  public T getNextElement() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getNextElement'");
+  }
+
+  @Override
+  public T getPreviousElement() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getPreviousElement'");
+  }
+
 }

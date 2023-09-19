@@ -8,4 +8,6 @@ public interface IList<T extends Object> {
 
   public void clear();
 
+  public void clearNavigation();
+
 }

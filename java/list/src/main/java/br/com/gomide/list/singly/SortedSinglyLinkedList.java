@@ -3,17 +3,17 @@ package br.com.gomide.list.singly;
 import br.com.gomide.list.interfaces.ISinglyLinkedList;
 import br.com.gomide.list.interfaces.ISortedList;
 
-public class SortedSinglyLinkedList<K extends Object, V extends Object>
-    implements ISortedList<K, V>, ISinglyLinkedList<K> {
+public class SortedSinglyLinkedList<T extends Comparable<?>>
+    implements ISortedList<T>, ISinglyLinkedList<T> {
 
   @Override
-  public boolean remove(K value) {
+  public boolean remove(T value) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'remove'");
   }
 
   @Override
-  public K find(K value) {
+  public T find(T value) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'find'");
   }
@@ -31,9 +31,21 @@ public class SortedSinglyLinkedList<K extends Object, V extends Object>
   }
 
   @Override
-  public void insert(K key, V value) {
+  public void insert(T value) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'insert'");
+  }
+
+  @Override
+  public void clearNavigation() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'clearNavigation'");
+  }
+
+  @Override
+  public T getNextElement() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getNextElement'");
   }
 
 }

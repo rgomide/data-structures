@@ -1,54 +1,39 @@
 package br.com.gomide.list;
 
-public class ListNode<K extends Object, V extends Object> {
+public class ListNode<T extends Object> {
 
-  private ListNode<K, V> next;
+  private ListNode<T> next;
 
-  private ListNode<K, V> previous;
+  private ListNode<T> previous;
 
-  private K key;
+  private T value;
 
-  private V value;
-
-  public ListNode(V value) {
+  public ListNode(T value) {
     this.value = value;
   }
 
-  public ListNode(K key, V value) {
-    this.key = key;
-    this.value = value;
-  }
-
-  public ListNode<K, V> getNext() {
+  public ListNode<T> getNext() {
     return next;
   }
 
-  public void setNext(ListNode<K, V> next) {
+  public void setNext(ListNode<T> next) {
     this.next = next;
   }
 
-  public ListNode<K, V> getPrevious() {
+  public ListNode<T> getPrevious() {
     return previous;
   }
 
-  public void setPrevious(ListNode<K, V> previous) {
+  public void setPrevious(ListNode<T> previous) {
     this.previous = previous;
   }
 
-  public V getValue() {
+  public T getValue() {
     return value;
   }
 
-  public void setValue(V value) {
+  public void setValue(T value) {
     this.value = value;
-  }
-
-  public K getKey() {
-    return key;
-  }
-
-  public void setKey(K key) {
-    this.key = key;
   }
 
 }

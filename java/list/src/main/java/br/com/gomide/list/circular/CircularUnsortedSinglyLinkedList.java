@@ -41,4 +41,16 @@ public class CircularUnsortedSinglyLinkedList<T extends Object> implements ISing
     throw new UnsupportedOperationException("Unimplemented method 'listContent'");
   }
 
+  @Override
+  public void clearNavigation() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'clearNavigation'");
+  }
+
+  @Override
+  public T getNextElement() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getNextElement'");
+  }
+
 }

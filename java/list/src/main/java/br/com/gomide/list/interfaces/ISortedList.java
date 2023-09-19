@@ -1,7 +1,7 @@
 package br.com.gomide.list.interfaces;
 
-public interface ISortedList<K extends Object, V extends Object> extends IList<K> {
+public interface ISortedList<T extends Comparable<?>> extends IList<T> {
 
-  public void insert(K key, V value);
+  public void insert(T value);
 
 }
