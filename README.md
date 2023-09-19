@@ -3,9 +3,13 @@
 # Summary
 
 - [Introduction](#introduction)
-- [Binary Tree](/java/binary-tree/)
-- [URL Shortener](/java/url-shortener/)
-- [Graphs](/java/graphs)
+- [Java Projects](/java/)
+  - [Linked List](/java/list/)
+  - [Binary Tree](/java/binary-tree/)
+  - [URL Shortener](/java/url-shortener/)
+  - [Graphs](/java/graphs)
+- [JavaScript Projects](/js/)
+  - [Binary Tree](/js/01-binary-tree/)
 # Introduction
 
 I'm using this repo in my Data Structures classes. 
