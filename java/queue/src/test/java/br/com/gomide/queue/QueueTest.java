@@ -25,7 +25,7 @@ public class QueueTest {
 
       assertEquals(10, peekValue);
       assertEquals(1, total);
-      assertEquals("10", queueContent);
+      assertEquals("FIRST -> 10", queueContent);
     }
 
     @Test
@@ -39,17 +39,17 @@ public class QueueTest {
 
       queue.enqueue(7);
       peekValue = queue.peek();
-      assertEquals(7, peekValue);
+      assertEquals(2, peekValue);
 
       queue.enqueue(4);
       peekValue = queue.peek();
-      assertEquals(4, peekValue);
+      assertEquals(2, peekValue);
 
       int total = queue.size();
       assertEquals(3, total);
 
       String queueContent = queue.getContent();
-      assertEquals("4 -> 7 -> 2", queueContent);
+      assertEquals("FIRST -> 2 -> 7 -> 4", queueContent);
     }
 
     @Test
@@ -64,7 +64,7 @@ public class QueueTest {
       assertEquals(4, total);
 
       String queueContent = queue.getContent();
-      assertEquals("7 -> 6 -> 4 -> 2", queueContent);
+      assertEquals("FIRST -> 2 -> 4 -> 6 -> 7", queueContent);
     }
 
   }
@@ -88,7 +88,7 @@ public class QueueTest {
       assertEquals(3, total);
 
       String queueContent = queue.getContent();
-      assertEquals("7 -> 6 -> 4", queueContent);
+      assertEquals("FIRST -> 4 -> 6 -> 7", queueContent);
     }
 
     @Test
@@ -134,6 +134,31 @@ public class QueueTest {
 
     queue.dequeue();
     assertTrue(queue.isEmpty());
+
+    assertNull(queue.peek());
+
+    queue.dequeue();
+    assertTrue(queue.isEmpty());
+
+    String queueContent = queue.getContent();
+    assertEquals("", queueContent);
+  }
+
+  @Test
+  @DisplayName("clear action")
+  public void clearAQueue() {
+    Integer[] elements = new Integer[] { 6, 7, 9, 1 };
+    Queue<Integer> queue = new Queue<Integer>();
+
+    queue.enqueue(elements);
+
+    queue.clear();
+
+    assertTrue(queue.isEmpty());
+
+    int size = queue.size();
+
+    assertEquals(0, size);
 
     String queueContent = queue.getContent();
     assertEquals("", queueContent);

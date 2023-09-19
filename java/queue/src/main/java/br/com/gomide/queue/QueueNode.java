@@ -6,6 +6,10 @@ public class QueueNode<T extends Object> {
 
   private QueueNode<T> next;
 
+  public QueueNode(T value) {
+    this.value = value;
+  }
+
   public T getValue() {
     return value;
   }
