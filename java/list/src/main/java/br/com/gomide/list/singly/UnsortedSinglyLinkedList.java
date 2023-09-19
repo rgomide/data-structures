@@ -1,5 +1,6 @@
-package br.com.gomide.list;
+package br.com.gomide.list.singly;
 
+import br.com.gomide.list.ListNode;
 import br.com.gomide.list.interfaces.ISinglyLinkedList;
 import br.com.gomide.list.interfaces.IUnsortedList;
 

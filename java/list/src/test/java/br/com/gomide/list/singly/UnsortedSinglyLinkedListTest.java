@@ -1,6 +1,7 @@
-package br.com.gomide.list;
+package br.com.gomide.list.singly;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UnsortedSinglyLinkedListTest {
