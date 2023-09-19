@@ -5,6 +5,7 @@
 - [Introduction](#introduction)
 - [Java Projects](/java/)
   - [Linked List](/java/list/)
+  - [Queue](/java/queue/)
   - [Binary Tree](/java/binary-tree/)
   - [URL Shortener](/java/url-shortener/)
   - [Graphs](/java/graphs)
