@@ -4,6 +4,10 @@ import br.com.gomide.queue.interfaces.IQueue;
 
 public class Queue<T extends Object> implements IQueue<T> {
 
+  private QueueNode<T> first;
+  private QueueNode<T> last;
+  private int size;
+
   @Override
   public void enqueue(T value) {
     // TODO Auto-generated method stub
