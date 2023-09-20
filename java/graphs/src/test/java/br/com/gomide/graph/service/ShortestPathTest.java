@@ -1,4 +1,4 @@
-package br.com.gomide.data_structures.graph.service;
+package br.com.gomide.graph.service;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -7,9 +7,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.gomide.data_structures.graph.model.DirectedGraph;
-import br.com.gomide.data_structures.graph.model.Graph;
-import br.com.gomide.data_structures.graph.model.NonDirectedGraph;
+import br.com.gomide.graph.model.DirectedGraph;
+import br.com.gomide.graph.model.Graph;
+import br.com.gomide.graph.model.NonDirectedGraph;
 
 public class ShortestPathTest {
     @Test
