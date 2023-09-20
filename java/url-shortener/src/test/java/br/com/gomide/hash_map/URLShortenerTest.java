@@ -1,4 +1,4 @@
-package br.com.gomide.data_structures.hash_map;
+package br.com.gomide.hash_map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;

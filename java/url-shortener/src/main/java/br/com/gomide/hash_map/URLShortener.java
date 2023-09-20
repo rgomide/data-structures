@@ -1,4 +1,4 @@
-package br.com.gomide.data_structures.hash_map;
+package br.com.gomide.hash_map;
 
 public class URLShortener implements IURLShortener {
 

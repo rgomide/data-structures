@@ -1,6 +1,6 @@
 # URL Shortener
 
-In this folder we have the URL Shortener project with the [IURLShortener](src/main/java/br/com/gomide/data_structures/hash_map/IURLShortener.java) interface.
+In this folder we have the URL Shortener project with the [IURLShortener](src/main/java/br/com/gomide/hash_map/IURLShortener.java) interface.
 
 The `IURLShortener` interface contains three methods to generate a short URL:
 
@@ -10,8 +10,8 @@ The `IURLShortener` interface contains three methods to generate a short URL:
 
 ## Exercise
 
-We have a test class to check the [URLShortener](src/main/java/br/com/gomide/data_structures/hash_map/URLShortener.java) implementation.
+We have a test class to check the [URLShortener](src/main/java/br/com/gomide/hash_map/URLShortener.java) implementation.
 
-You should open the [URLShortenerTest](src/test/java/br/com/gomide/data_structures/hash_map/URLShortenerTest.java) to know how `URLShortener` will work.
+You should open the [URLShortenerTest](src/test/java/br/com/gomide/hash_map/URLShortenerTest.java) to know how `URLShortener` will work.
 
 Complete the `URLShortener` implementation to make all tests green.
