@@ -36,15 +36,15 @@ public class UnsortedDoublyLinkedList<T extends Object> implements IUnsortedList
   }
 
   @Override
-  public void insertAtInit(T value) {
+  public void append(T value) {
     // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'insertAtInit'");
+    throw new UnsupportedOperationException("Unimplemented method 'append'");
   }
 
   @Override
-  public void insertAtEnd(T value) {
+  public void prepend(T value) {
     // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'insertAtEnd'");
+    throw new UnsupportedOperationException("Unimplemented method 'prepend'");
   }
 
   @Override

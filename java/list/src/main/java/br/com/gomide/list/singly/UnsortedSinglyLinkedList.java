@@ -11,7 +11,7 @@ public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinked
   private ListNode<T> navigationPointer;
 
   @Override
-  public void insertAtInit(T value) {
+  public void prepend(T value) {
     ListNode<T> newElement = new ListNode<T>(value);
 
     if (first == null) {
@@ -25,7 +25,7 @@ public class UnsortedSinglyLinkedList<T extends Object> implements ISinglyLinked
   }
 
   @Override
-  public void insertAtEnd(T value) {
+  public void append(T value) {
     ListNode<T> newElement = new ListNode<T>(value);
 
     if (first == null) {

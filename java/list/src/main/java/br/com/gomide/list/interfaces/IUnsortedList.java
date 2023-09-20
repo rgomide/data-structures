@@ -2,19 +2,19 @@ package br.com.gomide.list.interfaces;
 
 public interface IUnsortedList<T extends Object> extends IList<T> {
 
-  default public void insertAtInit(T[] values) {
+  default public void prepend(T[] values) {
     for (T value : values) {
-      this.insertAtInit(value);
+      this.prepend(value);
     }
   }
 
-  public void insertAtInit(T value);
+  public void prepend(T value);
 
-  default public void insertAtEnd(T[] values) {
+  default public void append(T[] values) {
     for (T value : values) {
-      this.insertAtEnd(value);
+      this.append(value);
     }
   }
 
-  public void insertAtEnd(T value);
+  public void append(T value);
 }

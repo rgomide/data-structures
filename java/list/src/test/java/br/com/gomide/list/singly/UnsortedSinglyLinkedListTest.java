@@ -28,10 +28,10 @@ public class UnsortedSinglyLinkedListTest {
     public void insertElementsAtInitSuccessfully() {
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtInit(2);
-      list.insertAtInit(5);
-      list.insertAtInit(8);
-      list.insertAtInit(4);
+      list.prepend(2);
+      list.prepend(5);
+      list.prepend(8);
+      list.prepend(4);
 
       String content = list.listContent();
 
@@ -43,10 +43,10 @@ public class UnsortedSinglyLinkedListTest {
     public void insertElementsAtEndSuccessfully() {
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtEnd(2);
-      list.insertAtEnd(5);
-      list.insertAtEnd(8);
-      list.insertAtEnd(4);
+      list.append(2);
+      list.append(5);
+      list.append(8);
+      list.append(4);
 
       String content = list.listContent();
 
@@ -58,10 +58,10 @@ public class UnsortedSinglyLinkedListTest {
     public void insertElementsSuccessfuly() {
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtEnd(2);
-      list.insertAtInit(5);
-      list.insertAtInit(8);
-      list.insertAtEnd(4);
+      list.append(2);
+      list.prepend(5);
+      list.prepend(8);
+      list.append(4);
 
       String content = list.listContent();
 
@@ -80,7 +80,7 @@ public class UnsortedSinglyLinkedListTest {
       Integer[] elements = new Integer[] { 2, 5, 8, 4 };
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtInit(elements);
+      list.prepend(elements);
 
       Integer value = list.find(5);
 
@@ -93,7 +93,7 @@ public class UnsortedSinglyLinkedListTest {
       Integer[] elements = new Integer[] { 2, 5, 8, 4 };
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtInit(elements);
+      list.prepend(elements);
 
       Integer value = list.find(666);
 
@@ -112,7 +112,7 @@ public class UnsortedSinglyLinkedListTest {
       Integer[] elements = new Integer[] { 2, 5, 8, 4 };
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtEnd(elements);
+      list.append(elements);
 
       boolean removed = list.remove(5);
       String content = list.listContent();
@@ -127,7 +127,7 @@ public class UnsortedSinglyLinkedListTest {
       Integer[] elements = new Integer[] { 2, 5, 8, 4 };
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtEnd(elements);
+      list.append(elements);
 
       boolean removed = list.remove(4);
       String content = list.listContent();
@@ -142,7 +142,7 @@ public class UnsortedSinglyLinkedListTest {
       Integer[] elements = new Integer[] { 2, 5, 8, 4 };
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtEnd(elements);
+      list.append(elements);
 
       boolean removed = list.remove(2);
       String content = list.listContent();
@@ -157,7 +157,7 @@ public class UnsortedSinglyLinkedListTest {
       Integer[] elements = new Integer[] { 2 };
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtEnd(elements);
+      list.append(elements);
 
       boolean removed = list.remove(2);
       String content = list.listContent();
@@ -172,7 +172,7 @@ public class UnsortedSinglyLinkedListTest {
       Integer[] elements = new Integer[] { 2, 5, 8, 4 };
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtEnd(elements);
+      list.append(elements);
 
       boolean removed = list.remove(666);
       String content = list.listContent();
@@ -193,7 +193,7 @@ public class UnsortedSinglyLinkedListTest {
       Integer[] elements = new Integer[] { 2, 5, 8 };
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtEnd(elements);
+      list.append(elements);
 
       Integer element = list.getNextElement();
       assertEquals(2, element);
@@ -214,7 +214,7 @@ public class UnsortedSinglyLinkedListTest {
       Integer[] elements = new Integer[] { 2, 5, 8 };
       UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-      list.insertAtEnd(elements);
+      list.append(elements);
 
       Integer element = list.getNextElement();
       assertEquals(2, element);
@@ -245,7 +245,7 @@ public class UnsortedSinglyLinkedListTest {
     Integer[] elements = new Integer[] { 2, 5, 8, 4 };
     UnsortedSinglyLinkedList<Integer> list = new UnsortedSinglyLinkedList<Integer>();
 
-    list.insertAtEnd(elements);
+    list.append(elements);
 
     list.clear();
     String content = list.listContent();
