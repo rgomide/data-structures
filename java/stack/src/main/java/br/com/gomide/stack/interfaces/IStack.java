@@ -6,7 +6,9 @@ public interface IStack<T extends Object> {
 
   public void push(T value);
 
-  public T pop(T value);
+  public T peek();
+
+  public T pop();
 
   public int size();
 

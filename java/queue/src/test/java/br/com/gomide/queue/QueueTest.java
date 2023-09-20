@@ -163,4 +163,5 @@ public class QueueTest {
     String queueContent = queue.getContent();
     assertEquals("", queueContent);
   }
+
 }

@@ -20,7 +20,7 @@ public class Stack<T extends Object> implements IStack<T> {
   }
 
   @Override
-  public T pop(T value) {
+  public T pop() {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'pop'");
   }
@@ -47,6 +47,12 @@ public class Stack<T extends Object> implements IStack<T> {
   public boolean isEmpty() {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
+  }
+
+  @Override
+  public T peek() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'peek'");
   }
 
 }
