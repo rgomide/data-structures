@@ -1,4 +1,4 @@
-package br.com.gomide.data_structures.binary_tree;
+package br.com.gomide.binary_tree;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,14 +33,14 @@ class BinaryTreeTest {
 		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 )right:8 )");
 
 		binaryTreeOps.insert(rootNode, 1);
-		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 )right:8 )");		
-		
+		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 )right:8 )");
+
 		binaryTreeOps.insert(rootNode, 4);
 		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 right:4 )right:8 )");
 
 		binaryTreeOps.insert(rootNode, 3);
 		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )");
-		
+
 		binaryTreeOps.insert(rootNode, 3);
 		assertEquals(binaryTreeOps.toString(rootNode), "root:6 (left:2 (left:1 right:4 (left:3 ))right:8 )");
 	}

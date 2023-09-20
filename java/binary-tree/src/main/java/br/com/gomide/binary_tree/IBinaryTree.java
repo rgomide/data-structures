@@ -1,4 +1,4 @@
-package br.com.gomide.data_structures.binary_tree;
+package br.com.gomide.binary_tree;
 
 public interface IBinaryTree<T extends Comparable<?>> {
 
