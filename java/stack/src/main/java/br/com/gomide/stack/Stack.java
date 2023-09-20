@@ -4,7 +4,7 @@ import br.com.gomide.stack.interfaces.IStack;
 
 public class Stack<T extends Object> implements IStack<T> {
 
-  private StackNode<T> next;
+  private StackNode<T> top;
   private int size;
 
   @Override
