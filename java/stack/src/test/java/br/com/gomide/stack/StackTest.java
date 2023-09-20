@@ -71,7 +71,7 @@ public class StackTest {
 
   @Nested
   @DisplayName("pop action")
-  class pop {
+  class Pop {
 
     @Test
     @DisplayName("pop a single element")
