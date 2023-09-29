@@ -11,8 +11,10 @@ mvn jacoco:prepare-agent test install jacoco:report
 
 ## Exercícios
 
-### Classe VetorUtil
-Implemente a classe `VetorUtil` que realize a interface [IVetorUtil](./src/main/java/br/com/junitsetup/exercicio/IVetorUtil.java). Comece eleborando os casos de teste para cada um dos métodos contidos na interface. 
+### 1. Classe VetorUtil
+Implemente a classe `VetorUtil` que realiza a interface [IVetorUtil](./src/main/java/br/com/junitsetup/exercicio/IVetorUtil.java). Comece eleborando os casos de teste para cada um dos métodos contidos em [IVetorUtil](./src/main/java/br/com/junitsetup/exercicio/IVetorUtil.java). 
+
+Os testes devem cobrir o fluxo primário e os fluxos de excessões de cada método.
 
 ## Referências
 - [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)
