@@ -4,6 +4,7 @@
 
 - [Introduction](#introduction)
 - [Java Projects](/java/)
+  - [JUnit Setup](/java/junit-setup/)
   - [Linked List](/java/list/)
   - [Queue](/java/queue/)
   - [Stack](/java/stack/)
