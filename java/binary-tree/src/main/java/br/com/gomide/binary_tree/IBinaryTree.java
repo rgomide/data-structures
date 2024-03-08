@@ -1,6 +1,6 @@
 package br.com.gomide.binary_tree;
 
-public interface IBinaryTree<T extends Comparable<?>> {
+public interface IBinaryTree<T extends Comparable<T>> {
 
   /**
    * Create a tree from a single element

@@ -1,6 +1,6 @@
 package br.com.gomide.binary_tree;
 
-public class BinaryTree<T extends Comparable<?>> implements IBinaryTree<T> {
+public class BinaryTree<T extends Comparable<T>> implements IBinaryTree<T> {
 
   @Override
   public Node<T> createTree(T element) {

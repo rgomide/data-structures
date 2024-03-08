@@ -1,6 +1,6 @@
 package br.com.gomide.binary_tree;
 
-public class Node<T extends Comparable<?>> {
+public class Node<T extends Comparable<T>> {
 
   private T value;
   private Node<T> left;
