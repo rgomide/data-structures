@@ -1,6 +1,10 @@
 package br.com.gomide.hashing.service;
 
+import java.util.List;
+import java.util.StringJoiner;
+
 import br.com.gomide.hashing.model.HashTable;
+import br.com.gomide.hashing.model.Node;
 
 public abstract class Hash<T extends Comparable<T>> implements IHashing<T> {
   @Override
@@ -17,7 +21,18 @@ public abstract class Hash<T extends Comparable<T>> implements IHashing<T> {
 
   @Override
   public String toString(HashTable<T> hashTable) {
-    return hashTable.toString();
+    List<Node<T>> items = hashTable.getItems();
+
+    StringJoiner joiner = new StringJoiner(",");
+
+    for (int i = 0; i < items.size(); i++) {
+      Node<T> item = items.get(i);
+      String message = String.format("%d->%s", i, item.toString());
+
+      joiner.add(message);
+    }
+
+    return joiner.toString();
   }
 
 }
