@@ -6,12 +6,16 @@ import br.com.gomide.hashing.model.NodeStatus;
 
 public class HashLinearProb<T extends Comparable<T>> extends Hash<T> {
 
+  private int getIndex(HashTable<T> hashTable, T value, int m, int i) {
+    return ((value.hashCode() % m) + i) % m;
+  }
+
   @Override
   public boolean insert(HashTable<T> hashTable, T value) {
     int tableSize = hashTable.getItems().size();
 
     for (int i = 0; i < tableSize - 1; i++) {
-      int position = ((value.hashCode() % tableSize) + i) % tableSize;
+      int position = getIndex(hashTable, value, tableSize, i);
 
       Node<T> element = hashTable.getItems().get(position);
       if (!element.getStatus().equals(NodeStatus.BUSY)) {
@@ -30,7 +34,7 @@ public class HashLinearProb<T extends Comparable<T>> extends Hash<T> {
     int tableSize = hashTable.getItems().size();
 
     for (int i = 0; i < tableSize - 1; i++) {
-      int position = ((value.hashCode() % tableSize) + i) % tableSize;
+      int position = getIndex(hashTable, value, tableSize, i);
 
       Node<T> element = hashTable.getItems().get(position);
       if (element.getStatus().equals(NodeStatus.BUSY) && value.equals(element.getValue())) {
@@ -48,7 +52,7 @@ public class HashLinearProb<T extends Comparable<T>> extends Hash<T> {
     int tableSize = hashTable.getItems().size();
 
     for (int i = 0; i < tableSize - 1; i++) {
-      int position = ((value.hashCode() % tableSize) + i) % tableSize;
+      int position = getIndex(hashTable, value, tableSize, i);
 
       Node<T> element = hashTable.getItems().get(position);
       if (element.getStatus().equals(NodeStatus.BUSY) && value.equals(element.getValue())) {

@@ -51,8 +51,10 @@ public class HashQuadraticProb<T extends Comparable<T>> extends Hash<T> {
   public T find(HashTable<T> hashTable, T value) {
     int tableSize = hashTable.getItems().size();
 
-    for (int i = 0; i < tableSize - 1; i++) {
-      int position = ((value.hashCode() % tableSize) + i) % tableSize;
+    int position = value.hashCode() % tableSize;
+
+    for (int k = 0; k < tableSize - 1; k++) {
+      position = (position + k) % tableSize;
 
       Node<T> element = hashTable.getItems().get(position);
       if (element.getStatus().equals(NodeStatus.BUSY) && value.equals(element.getValue())) {
