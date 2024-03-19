@@ -4,19 +4,7 @@ import br.com.gomide.hashing.model.HashTable;
 import br.com.gomide.hashing.model.Node;
 import br.com.gomide.hashing.model.NodeStatus;
 
-public class HashLinearProb<T extends Comparable<T>> implements IHashing<T> {
-
-  @Override
-  public HashTable<T> createHashTable(int n) {
-    return new HashTable<T>(n);
-  }
-
-  @Override
-  public void insert(HashTable<T> hashTable, T[] values) {
-    for (T value : values) {
-      insert(hashTable, value);
-    }
-  }
+public class HashLinearProb<T extends Comparable<T>> extends Hash<T> {
 
   @Override
   public boolean insert(HashTable<T> hashTable, T value) {
@@ -69,11 +57,6 @@ public class HashLinearProb<T extends Comparable<T>> implements IHashing<T> {
     }
 
     return -1;
-  }
-
-  @Override
-  public String toString(HashTable<T> hashTable) {
-    return hashTable.toString();
   }
 
 }
