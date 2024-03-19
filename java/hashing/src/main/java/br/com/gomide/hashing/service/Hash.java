@@ -27,7 +27,7 @@ public abstract class Hash<T extends Comparable<T>> implements IHashing<T> {
 
     for (int i = 0; i < items.size(); i++) {
       Node<T> item = items.get(i);
-      String message = String.format("%d->%s", i, item.toString());
+      String message = String.format("[%d]%s", i, item.toString());
 
       joiner.add(message);
     }

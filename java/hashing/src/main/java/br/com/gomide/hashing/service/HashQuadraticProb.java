@@ -48,7 +48,7 @@ public class HashQuadraticProb<T extends Comparable<T>> extends Hash<T> {
   }
 
   @Override
-  public int findIndex(HashTable<T> hashTable, T value) {
+  public T find(HashTable<T> hashTable, T value) {
     int tableSize = hashTable.getItems().size();
 
     for (int i = 0; i < tableSize - 1; i++) {
@@ -56,11 +56,11 @@ public class HashQuadraticProb<T extends Comparable<T>> extends Hash<T> {
 
       Node<T> element = hashTable.getItems().get(position);
       if (element.getStatus().equals(NodeStatus.BUSY) && value.equals(element.getValue())) {
-        return position;
+        return element.getValue();
       }
     }
 
-    return -1;
+    return null;
   }
 
 }

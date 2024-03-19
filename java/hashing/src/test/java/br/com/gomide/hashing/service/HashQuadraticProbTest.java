@@ -1,7 +1,6 @@
 package br.com.gomide.hashing.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ public class HashQuadraticProbTest {
     assertEquals(hashTable.getItems().size(), 8);
 
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->FREE:,3->FREE:,4->FREE:,5->FREE:,6->FREE:,7->FREE:");
+        "[0]FREE:,[1]FREE:,[2]FREE:,[3]FREE:,[4]FREE:,[5]FREE:,[6]FREE:,[7]FREE:");
   }
 
   @Test
@@ -31,7 +30,7 @@ public class HashQuadraticProbTest {
     hashingService.insert(hashTable, elements);
 
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->BUSY:36,3->FREE:,4->BUSY:12,5->BUSY:20,6->FREE:,7->BUSY:28");
+        "[0]FREE:,[1]FREE:,[2]BUSY:36,[3]FREE:,[4]BUSY:12,[5]BUSY:20,[6]FREE:,[7]BUSY:28");
   }
 
   @Test
@@ -42,35 +41,35 @@ public class HashQuadraticProbTest {
     assertEquals(hashTable.getItems().size(), 8);
 
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->FREE:,3->FREE:,4->FREE:,5->FREE:,6->FREE:,7->FREE:");
+        "[0]FREE:,[1]FREE:,[2]FREE:,[3]FREE:,[4]FREE:,[5]FREE:,[6]FREE:,[7]FREE:");
 
     assertTrue(hashingService.insert(hashTable, 12));
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->FREE:,3->FREE:,4->BUSY:12,5->FREE:,6->FREE:,7->FREE:");
+        "[0]FREE:,[1]FREE:,[2]FREE:,[3]FREE:,[4]BUSY:12,[5]FREE:,[6]FREE:,[7]FREE:");
 
     assertTrue(hashingService.insert(hashTable, 20));
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->FREE:,3->FREE:,4->BUSY:12,5->BUSY:20,6->FREE:,7->FREE:");
+        "[0]FREE:,[1]FREE:,[2]FREE:,[3]FREE:,[4]BUSY:12,[5]BUSY:20,[6]FREE:,[7]FREE:");
 
     assertTrue(hashingService.insert(hashTable, 28));
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->FREE:,3->FREE:,4->BUSY:12,5->BUSY:20,6->FREE:,7->BUSY:28");
+        "[0]FREE:,[1]FREE:,[2]FREE:,[3]FREE:,[4]BUSY:12,[5]BUSY:20,[6]FREE:,[7]BUSY:28");
 
     assertTrue(hashingService.insert(hashTable, 36));
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->BUSY:36,3->FREE:,4->BUSY:12,5->BUSY:20,6->FREE:,7->BUSY:28");
+        "[0]FREE:,[1]FREE:,[2]BUSY:36,[3]FREE:,[4]BUSY:12,[5]BUSY:20,[6]FREE:,[7]BUSY:28");
 
     assertTrue(hashingService.remove(hashTable, 12));
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->BUSY:36,3->FREE:,4->REMOVED:12,5->BUSY:20,6->FREE:,7->BUSY:28");
+        "[0]FREE:,[1]FREE:,[2]BUSY:36,[3]FREE:,[4]REMOVED:12,[5]BUSY:20,[6]FREE:,[7]BUSY:28");
 
     assertTrue(hashingService.remove(hashTable, 20));
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->BUSY:36,3->FREE:,4->REMOVED:12,5->REMOVED:20,6->FREE:,7->BUSY:28");
+        "[0]FREE:,[1]FREE:,[2]BUSY:36,[3]FREE:,[4]REMOVED:12,[5]REMOVED:20,[6]FREE:,[7]BUSY:28");
 
     assertTrue(hashingService.insert(hashTable, 44));
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->BUSY:36,3->FREE:,4->BUSY:44,5->REMOVED:20,6->FREE:,7->BUSY:28");
+        "[0]FREE:,[1]FREE:,[2]BUSY:36,[3]FREE:,[4]BUSY:44,[5]REMOVED:20,[6]FREE:,[7]BUSY:28");
   }
 
   @Test
@@ -89,18 +88,18 @@ public class HashQuadraticProbTest {
     assertTrue(hashingService.insert(hashTable, 44));
 
     assertEquals(hashingService.toString(hashTable),
-        "0->FREE:,1->FREE:,2->BUSY:36,3->FREE:,4->BUSY:44,5->REMOVED:20,6->FREE:,7->BUSY:28");
+        "[0]FREE:,[1]FREE:,[2]BUSY:36,[3]FREE:,[4]BUSY:44,[5]REMOVED:20,[6]FREE:,[7]BUSY:28");
 
-    int value = hashingService.findIndex(hashTable, 36);
-    assertEquals(value, 2);
+    Integer value = hashingService.find(hashTable, 36);
+    assertEquals(value, 36);
 
-    value = hashingService.findIndex(hashTable, 44);
-    assertEquals(value, 4);
+    value = hashingService.find(hashTable, 44);
+    assertEquals(value, 44);
 
-    value = hashingService.findIndex(hashTable, 20);
-    assertEquals(value, -1);
+    value = hashingService.find(hashTable, 20);
+    assertNull(value);
 
-    value = hashingService.findIndex(hashTable, 28);
-    assertEquals(value, 7);
+    value = hashingService.find(hashTable, 28);
+    assertEquals(value, 28);
   }
 }

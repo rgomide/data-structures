@@ -12,7 +12,7 @@ public interface IHashing<T extends Comparable<T>> {
 
   boolean remove(HashTable<T> hashTable, T value);
 
-  int findIndex(HashTable<T> hashTable, T value);
+  T find(HashTable<T> hashTable, T value);
 
   String toString(HashTable<T> hashTable);
 
