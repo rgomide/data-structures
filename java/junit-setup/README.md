@@ -90,14 +90,66 @@ Este comando compila o projeto e executa todos os testes encontrados na pasta sr
 - `@DisplayName`: Fornecer um nome legível e descritivo aos métodos de teste e classes de teste.
 - `@Nested`: Permite dividir um conjunto de testes em grupos logicamente relacionados, facilitando a leitura e manutenção dos testes. Cada classe aninhada pode ter seu próprio estado de configuração (`@BeforeEach`) e limpeza (`@AfterEach`), permitindo um controle mais granular sobre o ambiente de teste.
 
-#### Assertivas:
+#### Assertivas do JUnit:
 
-- `assertEquals(expected, actual)`: Verifica se o valor esperado é igual ao valor atual.
+As assertivas são usadas para validar o comportamento esperado do código. Aqui estão algumas das principais assertivas do JUnit:
+
+- `assertEquals(expected, actual)`: Verifica se os valores esperados e atuais são iguais.
+
+  ```java
+  int expected = 5;
+  int actual = 5;
+  assertEquals(expected, actual, "Os valores esperados e atuais devem ser iguais");
+  ```
 - `assertTrue(condition)`: Verifica se a condição é verdadeira.
+
+  ```java
+  assertTrue(3 > 2, "A condição deve ser verdadeira");
+  ```
+
 - `assertFalse(condition)`: Verifica se a condição é falsa.
+
+  ```java
+  assertFalse(3 < 2, "A condição deve ser falsa");
+  ```
+
 - `assertNull(object)`: Verifica se o objeto é nulo.
+
+  ```java
+  String obj = null;
+  assertNull(obj, "O objeto deve ser nulo");
+  ```
+
 - `assertNotNull(object)`: Verifica se o objeto não é nulo.
+
+  ```java
+  String obj = "Hello";
+  assertNotNull(obj, "O objeto não deve ser nulo");
+  ```
+
 - `assertThrows(expectedType, executable)`: Verifica se o lançamento de uma exceção ocorre conforme esperado.
+
+  ```java
+  assertThrows(IllegalArgumentException.class, () -> {
+      throw new IllegalArgumentException("Exceção esperada");
+  }, "Uma exceção do tipo esperado deve ser lançada");
+  ```
+
+- `assertArrayEquals(expectedArray, actualArray)`: Verifica se dois arrays são iguais, elemento por elemento.
+
+  ```java
+  int[] expectedArray = {1, 2, 3};
+  int[] actualArray = {1, 2, 3};
+  assertArrayEquals(expectedArray, actualArray, "Os arrays devem ser iguais");
+  ```
+
+- `assertIterableEquals(expectedIterable, actualIterable)`: Verifica se duas coleções iteráveis (como listas) são iguais, elemento por elemento.
+
+  ```java
+  List<String> expectedList = Arrays.asList("A", "B", "C");
+  List<String> actualList = Arrays.asList("A", "B", "C");
+  assertIterableEquals(expectedList, actualList, "As listas devem ser iguais");
+  ```
 
 ## Relatório de cobertura
 
