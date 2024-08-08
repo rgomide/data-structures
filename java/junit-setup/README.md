@@ -87,6 +87,8 @@ Este comando compila o projeto e executa todos os testes encontrados na pasta sr
 - `@Test`: Indica que o método é um caso de teste.
 - `@BeforeEach` e `@AfterEach`: Executados antes e depois de cada teste, respectivamente.
 - `@BeforeAll` e `@AfterAll`: Executados uma vez antes e depois de todos os testes.
+- `@DisplayName`: Fornecer um nome legível e descritivo aos métodos de teste e classes de teste.
+- `@Nested`: Permite dividir um conjunto de testes em grupos logicamente relacionados, facilitando a leitura e manutenção dos testes. Cada classe aninhada pode ter seu próprio estado de configuração (`@BeforeEach`) e limpeza (`@AfterEach`), permitindo um controle mais granular sobre o ambiente de teste.
 
 #### Assertivas:
 
@@ -107,9 +109,10 @@ mvn jacoco:prepare-agent test install jacoco:report
 ## Exercícios
 
 ### 1. Classe VetorUtil
+
 Implemente a classe `VetorUtil` que realiza a interface [IVetorUtil](./src/main/java/br/com/junitsetup/exercicio/IVetorUtil.java). Comece eleborando os casos de teste para cada um dos métodos contidos em [IVetorUtil](./src/main/java/br/com/junitsetup/exercicio/IVetorUtil.java). 
 
-Os testes devem cobrir os fluxos primários e de excessões de cada método.
+Os testes devem cobrir os fluxos primários e de exceções de cada método.
 
 ## Referências
 - [Maven - Download Apache Maven](https://maven.apache.org/download.cgi)
