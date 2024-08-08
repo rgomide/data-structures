@@ -25,6 +25,7 @@ Você deve adicionar a dependência do JUnit no arquivo pom.xml do seu projeto M
 <dependency>
   <groupId>org.junit.jupiter</groupId>
   <artifactId>junit-jupiter</artifactId>
+  <version>5.10.3</version>
   <scope>test</scope>
 </dependency>
 ```
