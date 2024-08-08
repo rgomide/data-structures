@@ -10,6 +10,8 @@ Este repositório possui um projeto Maven configurado para executar testes com a
   - [3. Criar uma Classe de Teste](#3-criar-uma-classe-de-teste)
   - [4. Executar os Testes](#4-executar-os-testes)
   - [5. Conceitos Básicos do JUnit](#5-conceitos-básicos-do-junit)
+    - [Anotações Importantes](#anotações-importantes)
+    - [Assertivas do JUnit](#assertivas-do-junit)
 - [Relatório de cobertura](#relatório-de-cobertura)
 - [Exercícios](#exercícios)
 
@@ -82,7 +84,7 @@ Este comando compila o projeto e executa todos os testes encontrados na pasta sr
 
 ### 5. Conceitos Básicos do JUnit
 
-#### Anotações Importantes:
+#### Anotações Importantes
 
 - `@Test`: Indica que o método é um caso de teste.
 - `@BeforeEach` e `@AfterEach`: Executados antes e depois de cada teste, respectivamente.
@@ -90,7 +92,7 @@ Este comando compila o projeto e executa todos os testes encontrados na pasta sr
 - `@DisplayName`: Fornecer um nome legível e descritivo aos métodos de teste e classes de teste.
 - `@Nested`: Permite dividir um conjunto de testes em grupos logicamente relacionados, facilitando a leitura e manutenção dos testes. Cada classe aninhada pode ter seu próprio estado de configuração (`@BeforeEach`) e limpeza (`@AfterEach`), permitindo um controle mais granular sobre o ambiente de teste.
 
-#### Assertivas do JUnit:
+#### Assertivas do JUnit
 
 As assertivas são usadas para validar o comportamento esperado do código. Aqui estão algumas das principais assertivas do JUnit:
 
