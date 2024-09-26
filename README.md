@@ -5,6 +5,7 @@
 - [Introduction](#introduction)
 - [Java Projects](/java/)
   - [JUnit Setup](/java/junit-setup/)
+  - [Object Reference](/java/object-reference/)
   - [Linked List](/java/list/)
   - [Queue](/java/queue/)
   - [Stack](/java/stack/)
@@ -13,6 +14,7 @@
   - [URL Shortener](/java/url-shortener/)
   - [Graphs](/java/graphs)
 - [JavaScript Projects](/js/)
+  - [Object Reference](/js/object-reference/)
   - [Binary Tree](/js/01-binary-tree/)
 # Introduction
 
