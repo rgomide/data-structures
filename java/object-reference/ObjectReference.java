@@ -19,11 +19,20 @@ public class ObjectReference {
 
     objA.setNext(objB);
 
-    System.out.println(objA);
+    System.out.println(String.format("objA: %s", objA));
 
     objB.setValue("B*");
 
-    System.out.println(objA);
+    System.out.println(String.format("objA: %s",objA));
+
+    ObjectReference objC = new ObjectReference();
+    objC.setId(1);
+
+    System.out.println("");
+    System.out.println(String.format("objC: %s", objC));
+
+    System.out.println(String.format("objA == objC      ===> %s", objA == objC));
+    System.out.println(String.format("objA.equals(objC) ===> %s", objA.equals(objC)));
   }
 
   public Integer getId() {
@@ -51,7 +60,32 @@ public class ObjectReference {
   }
 
   public String toString() {
-    return "ObjectReference [id = " + id + ", value = " + value + ", next = " + next + "]";
+    return "[id = " + id + ", value = " + value + ", next = " + next + "]";
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((id == null) ? 0 : id.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    ObjectReference other = (ObjectReference) obj;
+    if (id == null) {
+      if (other.id != null)
+        return false;
+    } else if (!id.equals(other.id))
+      return false;
+    return true;
   }
 
 }
