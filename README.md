@@ -23,3 +23,13 @@ I'm using this repo in my Data Structures classes.
 Here we have some examples and exercises. This repo will be updated on demand.
 
 Enjoy!
+
+## Troubleshooting
+
+### Permission to execute commands `npm` in terminal
+
+If you receive a message about permission to execute commands `npm` in terminal, execute the following command:
+
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
