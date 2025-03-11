@@ -1,6 +1,6 @@
 # Data Structures
 
-# Summary
+## Summary
 
 - [Introduction](#introduction)
 - [Java Projects](/java/)
@@ -16,7 +16,8 @@
 - [JavaScript Projects](/js/)
   - [Object Reference](/js/object-reference/)
   - [Binary Tree](/js/01-binary-tree/)
-# Introduction
+
+## Introduction
 
 I'm using this repo in my Data Structures classes. 
 
