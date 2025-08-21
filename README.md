@@ -6,6 +6,7 @@
 - [Java Projects](/java/)
   - [JUnit Setup](/java/junit-setup/)
   - [Object Reference](/java/object-reference/)
+  - [Complexity Analysis](/java/complexity/)
   - [Linked List](/java/list/)
   - [Queue](/java/queue/)
   - [Stack](/java/stack/)
