@@ -99,4 +99,11 @@ public interface IBinaryTree<T extends Comparable<T>> {
    */
   String toString(Node<T> rootNode);
 
+  /**
+   * Check if the tree is complete
+   * @param rootNode
+   * @return true if the tree is complete, false otherwise
+   */
+  Boolean isComplete(Node<T> rootNode);
+
 }

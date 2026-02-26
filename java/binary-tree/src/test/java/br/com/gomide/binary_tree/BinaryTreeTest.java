@@ -155,4 +155,20 @@ class BinaryTreeTest {
     assertNull(binaryTreeOps.calculateNodeLevel(rootNode, null));
   }
 
+  @Test
+  void checkIfTheTreeIsComplete() {
+    IBinaryTree<Integer> binaryTreeOps = new BinaryTree<>();
+    Integer[] elements = new Integer[] { 6, 2, 8, 1, 4, 3 };
+
+    Node<Integer> rootNode = binaryTreeOps.createTree(elements);
+
+    assertTrue(binaryTreeOps.isComplete(rootNode));
+
+    elements = new Integer[] { 6, 2, 8, 1, 4, 3, 5 };
+
+    rootNode = binaryTreeOps.createTree(elements);
+
+    assertFalse(binaryTreeOps.isComplete(rootNode));
+  }
+
 }

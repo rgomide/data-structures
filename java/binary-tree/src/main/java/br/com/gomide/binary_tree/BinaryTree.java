@@ -68,4 +68,10 @@ public class BinaryTree<T extends Comparable<T>> implements IBinaryTree<T> {
     throw new UnsupportedOperationException("Unimplemented method 'toString'");
   }
 
+  @Override
+  public Boolean isComplete(Node<T> rootNode) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'isComplete'");
+  }
+
 }
